@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Catalog</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Shoe Catalog</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Brand</th>
+    <th>Price (ZAR)</th>
+  </tr>
+  <tr>
+    <td>Nike Air Max</td>
+    <td>Nike</td>
+    <td>R1999.00</td>
+    <td id="countdownNikeAirMax">5 days</td>
+  </tr>
+  <tr>
+    <td>Adidas Superstar</td>
+    <td>Adidas</td>
+    <td>R1499.00</td>
+    <td id="countdownAdidas">5 days</td>
+  </tr>
+  <tr>
+    <td>Vans Old Skool</td>
+    <td>Vans</td>
+    <td>R899.00</td>
+    <td id="countdownVans"> </td>
+  </tr>
+  <tr>
+    <td>New Balance 574</td>
+    <td>New Balance</td>
+    <td>R1299.00</td>
+    <td id="countdownNewbalance"></td>
+  </tr>
+  <tr>
+    <td>Puma Future Rider</td>
+    <td>Puma</td>
+    <td>R999.00</td>
+    <td id="countdownNikeAirMax"> month</td>
+  </tr>
+  <tr>
+    <td>Reebok Classic Leather</td>
+    <td>Reebok</td>
+    <td>R1099.00</td>
+    <td id="countdownNikeAirMax"> month</td>
+  </tr>
+  <tr>
+    <td>Converse Chuck Taylor All Star</td>
+    <td>Converse</td>
+    <td>R799.00</td>
+    <td id="countdownNikeAirMax"> month</td>
+  </tr>
+  <tr>
+    <td>Asics Gel-Lyte III</td>
+    <td>Asics</td>
+    <td>R1599.00</td>
+    <td id="countdownNikeAirMax"> month</td>
+  </tr>
+  <tr>
+    <td>Skechers D'Lites</td>
+    <td>Skechers</td>
+    <td>R1199.00</td>
+    <td id="countdownNikeAirMax"> month</td>
+  </tr>
+  <!-- Additional Shoes -->
+  <tr>
+    <td>Fila Disruptor II</td>
+    <td>Fila</td>
+    <td>R1399.00</td>
+    <td id="countdownNikeAirMax"> 6 months</td>
+  </tr>
+  <tr>
+    <td>Under Armour HOVR Phantom</td>
+    <td>Under Armour</td>
+    <td>R1799.00</td>
+    <td id="countdownNikeAirMax"> 6 months</td>
+  </tr>
+  <tr>
+    <td>Lacoste Carnaby Evo</td>
+    <td>Lacoste</td>
+    <td>R1899.00</td>
+    <td id="countdownNikeAirMax"> 6 months</td>
+  </tr>
+  <tr>
+    <td>Salomon Speedcross 5</td>
+    <td>Salomon</td>
+    <td>R1699.00</td>
+    <td id="countdownNikeAirMax"> 6 months</td>
+  </tr>
+  <tr>
+    <td>Brooks Ghost 13</td>
+    <td>Brooks</td>
+    <td>R2099.00</td>
+    <td id="countdownNikeAirMax"> 6 months</td>
+  </tr>
+  <tr>
+    <td>Merrell Moab 2</td>
+    <td>Merrell</td>
+    <td>R1599.00</td>
+    <td id="countdownNikeAirMax"> 6 months</td>
+  </tr>
+  <!-- Add more shoes -->
+</table>
+
+</body>
+
+    
+<script>
+  // Function to calculate countdown for each shoe
+  function calculateCountdown(shoeAvailabilityDate, countdownElementId) {
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = shoeAvailabilityDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById(countdownElementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    }, 1000);
+  }
+
+  // Countdown Timer for each shoe
+  calculateCountdown(new Date("2024-05-01T00:00:00").getTime(), "countdownNikeAirMax");
+  // Add more shoes and countdown timers as needed
+</script>
+
+</script>
+</html>
